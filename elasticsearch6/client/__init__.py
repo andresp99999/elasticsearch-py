@@ -549,7 +549,7 @@ class Elasticsearch(object):
     @query_params('_source', '_source_exclude', '_source_include',
         'allow_no_indices', 'allow_partial_search_results', 'analyze_wildcard',
         'analyzer', 'batched_reduce_size', 'default_operator', 'df',
-        'docvalue_fields', 'expand_wildcards', 'explain', 'from_',
+        'docvalue_fields', 'expand_wildcards', 'explain', 'from_', 'ignore_throttled',
         'ignore_unavailable', 'lenient', 'max_concurrent_shard_requests',
         'pre_filter_shard_size', 'preference', 'q', 'request_cache', 'routing',
         'scroll', 'search_type', 'size', 'sort', 'stats', 'stored_fields',
@@ -599,6 +599,7 @@ class Elasticsearch(object):
         :arg explain: Specify whether to return detailed information about score
             computation as part of a hit
         :arg from\\_: Starting offset (default: 0)
+        :arg ignore_throttled: Whether to include frozen indices (default: true)
         :arg ignore_unavailable: Whether specified concrete indices should be
             ignored when unavailable (missing or closed)
         :arg lenient: Specify whether format-based query failures (such as
